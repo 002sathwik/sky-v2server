@@ -85,9 +85,9 @@ const uploadFile = async (fileName: string, localFilePath: string) => {
 }
 
 const repoUrl = process.env.REPO_URL || 'https://github.com/002sathwik/counter.git'
+const id = process.env.ID ;
 async function init(): Promise<void> {
   
-  const id = generate();
   await simpleGit().clone(repoUrl, path.join(__dirname, `output/${id}`));
 
   await buildProject(id);
